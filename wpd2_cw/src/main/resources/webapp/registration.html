@@ -1,0 +1,85 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>
+        Milestone Planner app
+    </title>
+</head>
+<body>
+<div class="container-fluid">
+
+
+    <div class="row justify-content-center">
+        <h1 class = "col-12 text-center">Milestone Planner Registration Page</h1>
+        <div class="col-12 danger"></div>
+    </div>
+    <div class="row justify-content-center">
+
+
+        <form class="col-6 text-center mt-4" action="/registration" method="POST">
+            <div class="">
+                <label for="uname"><b>Username</b></label>
+                <input id="uname" class= "form-control col-sm-6 text-center mx-auto" type="text" placeholder="Enter Username" name="uname" required>
+                <br>
+                <label for="psw"><b>Password</b></label>
+                <input id="psw" class= "form-control col-sm-6 text-center mx-auto" type="password" placeholder="Enter Password" name="psw" required>
+                <br>
+                <label for="psw1"><b>Confirm Password</b></label>
+                <input id="psw1" class= "form-control col-sm-6 text-center mx-auto" type="password" placeholder="Re Confirm Password" name="psw1" required>
+                <br>
+                <label for="eml"><b>Email</b></label>
+                <input id ="eml" class= "form-control col-sm-6 text-center mx-auto" type="email" placeholder="Enter Email" name="eml" required>
+                <br>
+                <button id="submit" class="btn btn-success"type="submit">Register</button>
+            </div>
+
+            <span class="psw"><a href="#">Forgot password?</a></span>
+            <br>
+            <span class="psw"><a href="index.html">Login</a></span>
+        </form>
+
+
+    </div>
+</div>
+<script>
+    $('#submit').on('click', function(event){
+        var user_name = $('#uname').val();
+        var password1 = $('#psw').val();
+        var password2 = $('#psw1').val();
+        var eml = $('#eml')
+
+        if(password1 !== password2){
+            $('.danger').html("<div class='alert alert-danger' role='alert'><p class='text-center'>Passwords don't match</div>");
+            event.preventDefault();
+        }else if(password1 == null || password2 == null || password1 ==""){
+            $('.danger').html("<div class='alert alert-danger' role='alert'><p class='text-center'>Passwords can't be blank</div>");
+            event.preventDefault();
+        }else if(user_name==null || user_name == ""){
+            $('.danger').html("<div class='alert alert-danger' role='alert'><p class='text-center'>Username is a mandatory field</div>");
+            event.preventDefault();
+        }else if(password1.length < 6 || password2.length < 6){
+            $('.danger').html("<div class='alert alert-danger' role='alert'><p class='text-center'>Passwords must be 6 characters or more.</div>");
+            event.preventDefault();
+        }else if(password2 == null || password2 == ""){
+            $('.danger').html("<div class='alert alert-danger' role='alert'><p class='text-center'>Please Confirm ur password.</div>");
+            event.preventDefault();
+        }else if(eml == null || eml == ""){
+            $('.danger').html("<div class='alert alert-danger' role='alert'><p class='text-center'>Email is a mandatory field</div>");
+            event.preventDefault();
+
+        }
+
+
+
+
+    });
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>

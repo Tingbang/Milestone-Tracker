@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>My Milestone Planners</title>
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="row justify-content-center">
+        <h1 class = "col-12 text-center">Milestone Planner app</h1>
+    </div>
+
+    <div class="container">
+        <h2 class = "col-12 text-center">Remove a milestone</h2>
+    </div>
+
+    <div class="row justify-content-center">
+        <form class="col-6 text-center mt-4" action="/milestoneplanners" method="POST" id = "topicForm">
+            <div class="container">
+                <label><b>Name</b></label>
+                <input class= "form-control col-sm-6 text-center mx-auto" type="text" name="milestoneName" placeholder="Name of milestone"required>
+                <br>
+                <button class="btn btn-success"type="submit" onclick="alertUser()">Remove</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function alertUser()
+    {
+        alert("Milestone removed successfully.");
+    }
+</script>
+</body>
+</html>
